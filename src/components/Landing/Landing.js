@@ -67,7 +67,7 @@ function Landing() {
               className={active ? "active" : null}
               onClick={() => availableNowButton()}
             >
-              Available HEress
+              Available Now
             </span>
           </div>
         </div>
