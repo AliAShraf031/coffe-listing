@@ -1,38 +1,170 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #111315;
+}
+
+.img img {
+  width: 100%;
+  height: 50vh;
+}
+
+.collection {
+  max-width: 70%;
+  padding: 80px 120px;
+  margin: auto;
+  background-color: #1B1D1F;
+  border-radius: 15px;
+  transform: translateY(-150px);
+}
+
+@media (max-width: 768px) {
+  .collection {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 426px) {
+  .collection {
+    max-width: 30%;
+  }
+}
+
+.collection .title {
+  background-image: url('./assets/vector.svg');
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* justify-content: center; */
+  align-items: center;
+  max-width: 50%;
+  margin: auto;
+}
+
+.collection .title h1 {
+  color: white;
+  font-size: 40px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.collection .title p {
+  text-align: center;
+  color: #6F757C;
+  font-size: 18px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.collection .title .buttons {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.collection .title .buttons span {
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.active {
+  background-color: #6F757C;
+}
+
+.collection .title .buttons span:hover {
+  background-color: #6F757C;
+}
+
+.collection-content {
+  padding: 50px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.collection-content .box {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 5px;
+  max-width: 300px;
+}
+
+.collection-content .popular-img {
+  position: relative;
+}
+
+.collection-content .popular-img img {
+  border-radius: 20px;
+  width: 300px;
+}
+
+.collection-content .popular-img span {
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  z-index: 100;
+  background-color: #F6C768;
+  padding: 7px 10px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50px;
+}
+
+
+.collection-content .details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collection-content .details h3 {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.collection-content .details span {
+  display: flex;
+  gap: 5px;
+  background-color: #BEE3CC;
+  border-radius: 20px;
+  padding: 7px 15px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.collection-content .rating-votes {
+  display: flex;
+  gap: 10px;
+}
+
+.collection-content .rating-votes .rate {
+  color: white;
+  display: flex;
+  gap: 3px;
+}
+
+.collection-content .rating-votes .no-rate {
+  display: flex;
+  gap: 5px;
+  color: #6F757C;
+}
+
+.collection-content .rating-votes .vote {
+  color: #6F757C;
+}
+
+.collection-content .rating-votes .sold-out {
+  color: #ED735D;
+  margin-left: 80px;
 }
